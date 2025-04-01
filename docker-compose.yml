@@ -5,7 +5,20 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
+    container_name: cifar100_jupyter
     volumes:
       - ./notebooks:/app/notebooks
     ports:
       - "8888:8888"
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token=''
+
+  gradio:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: cifar100_gradio
+    volumes:
+      - ./notebooks:/app/notebooks
+    ports:
+      - "7860:7860"
+    command: python notebooks/gradio_app.py
