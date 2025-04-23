@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 # Cargar modelo
-model = load_model("notebooks/checkpoints/mobilenetv2_cifar100_best.h5")
+model = load_model("notebooks/checkpoints/cnn_cifar100_efficient_best.h5")
 
 # Etiquetas CIFAR-100 (ejemplo)
 labels = [
