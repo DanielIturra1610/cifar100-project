@@ -6,3 +6,6 @@ pandas
 seaborn
 scikit-learn
 gradio
+opencv-python
+gdown
+keras
