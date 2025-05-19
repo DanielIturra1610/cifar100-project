@@ -1,6 +1,9 @@
 FROM python:3.10-slim
 
-# Instalar dependencias del sistema (todas en un solo bloque)
+# Evitar prompts interactivos
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
     build-essential \
     git \
@@ -20,8 +23,8 @@ COPY requirements.txt .
 # Instalar dependencias Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Exponer el puerto de Jupyter
+# Exponer ambos puertos por si se usa en local
 EXPOSE 8888
+EXPOSE 7860
 
-# Comando para iniciar Jupyter
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
+# El comando se define desde docker-compose, así que no ponemos CMD aquí
