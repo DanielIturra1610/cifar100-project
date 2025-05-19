@@ -8,6 +8,7 @@ services:
     container_name: cifar100_jupyter
     volumes:
       - ./notebooks:/app/notebooks
+    working_dir: /app
     ports:
       - "8888:8888"
     command: jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token=''
@@ -19,6 +20,7 @@ services:
     container_name: cifar100_gradio
     volumes:
       - ./notebooks:/app/notebooks
+    working_dir: /app
     ports:
       - "7860:7860"
-    command: python notebooks/gradio_app.py
+    command: python notebooks/Entrega2/app_gradio.py
