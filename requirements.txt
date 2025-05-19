@@ -9,3 +9,4 @@ gradio
 opencv-python
 gdown
 keras
+opencv-contrib-python
