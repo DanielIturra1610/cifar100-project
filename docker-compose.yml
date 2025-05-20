@@ -23,4 +23,4 @@ services:
     working_dir: /app
     ports:
       - "7860:7860"
-    command: python notebooks/Entrega2/app_gradio.py
+    command: python notebooks/gradio_app.py
